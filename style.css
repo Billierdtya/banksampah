@@ -1,0 +1,555 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Smooth scrolling untuk navigasi */
+    scroll-behavior: smooth;
+    /* Mencegah zoom saat double tap di Android */
+    touch-action: manipulation;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    /* Optimasi font rendering untuk Android */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Mencegah text resize otomatis di landscape mode Android */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #2d5016 0%, #4a8c2a 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    /* Area tap yang lebih besar untuk Android */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.nav a:hover {
+    color: #c8e6c9;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: white;
+    color: #43a047;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Minimum tap target size untuk Android (48x48dp) */
+    min-height: 48px;
+    min-width: 150px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Mencegah tap highlight di Android */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2d5016;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 0;
+    background-color: #f1f8e9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #2d5016;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 5px 15px rgba(67, 160, 71, 0.3);
+}
+
+.step h3 {
+    color: #2d5016;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background-color: #f1f8e9;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    color: #2d5016;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Footer */
+.footer {
+    background-color: #2d5016;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design untuk Tablet */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #2d5016 0%, #4a8c2a 100%);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+    }
+
+    .nav a {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* Toggle Menu dengan Checkbox */
+    .menu-toggle:checked~.nav {
+        display: flex;
+    }
+
+    /* Animasi Hamburger menjadi X */
+    .menu-toggle:checked~.hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive Design untuk Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger span {
+        width: 25px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #2d5016 0%, #4a8c2a 100%);
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav a {
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem;
+        min-height: 48px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* Toggle Menu */
+    .menu-toggle:checked~.nav {
+        display: flex;
+    }
+
+    /* Animasi Hamburger menjadi X */
+    .menu-toggle:checked~.hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked~.hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .btn-primary {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 0 10px;
+    }
+
+    .services,
+    .how-it-works,
+    .about,
+    .contact {
+        padding: 3rem 0;
+    }
+
+    .service-card,
+    .step,
+    .contact-item {
+        padding: 1.5rem;
+    }
+
+    .services-grid,
+    .steps,
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    /* Optimasi text untuk layar kecil */
+    .about-content p,
+    .service-card p,
+    .step p,
+    .contact-item p {
+        font-size: 0.95rem;
+    }
+
+    /* Ukuran icon yang proporsional */
+    .service-icon,
+    .contact-icon {
+        font-size: 2.5rem;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+/* Optimasi khusus untuk Android layar sangat kecil */
+@media (max-width: 360px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .service-card h3,
+    .step h3,
+    .contact-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Optimasi untuk landscape mode di Android */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services,
+    .how-it-works,
+    .about,
+    .contact {
+        padding: 2.5rem 0;
+    }
+}
